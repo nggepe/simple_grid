@@ -3,3 +3,5 @@
 ## [0.0.2] - Add an example
 
 ## [0.0.3] - Re-documentation
+
+## [0.0.4] - Comment documentation, update extra large break-point, customizeable break-points

@@ -1,7 +1,8 @@
 # simple_grid
 
 **Inspired by bootstrap** ,
-This is dynamic grid layout that you can use Like a bootstrap grid.
+This is dynamic grid layout that you can use Like a bootstrap grid, but the size following <a href="https://material-ui.com/customization/breakpoints/">material UI</a> break points. But, don't to worry you can customize your break point like <a href="#sp-break-point">here</a>.
+This package purely using mediaquery, don't worry about the render.
 
 <img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/demo-grid.gif" width="100%"/>
 
@@ -58,4 +59,16 @@ SpGrid(width: MediaQuery.of(context).size.width, children: [
     ),
   ),
 ]);
+```
+
+# Customize Break Point
+
+<div id="#sp-break-point"></div>
+
+```dart
+SpGrid(
+  width: MediaQuery.of(context).size.width,
+  gridSize: SpGridSize(xs: 0, sm: 500, md: 768, lg: 980, xl: 1200),
+  children:[],
+)
 ```
