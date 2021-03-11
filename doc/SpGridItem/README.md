@@ -52,5 +52,4 @@ As the main doc, this package is inspired by bootstrap. We create grid width wit
 
 If you are feel strange to understand about bootstrap grid. Just see the image below ⬇️
 
-
-<img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/docs/grid-example.png" width="100%"/>
+<img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/grid-example.png" width="100%"/>
