@@ -76,7 +76,7 @@ Some properties of <code>SpGrid</code> class
   <tr>
     <td>children</td>
     <td>required List<SpGridItem></td>
-    <td><a href="">More information here</a></td>
+    <td><a href="https://github.com/nggepe/simple_grid/blob/master/docs/SpGridItem/README.md">More information here</a></td>
   </tr>
   <tr>
     <td>gridSize</td>
