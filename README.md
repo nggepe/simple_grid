@@ -41,6 +41,12 @@ There are 3 classes that you have to now, these are:
     <td>Empty space to inscribe inside the <code>decoration</code>. The <code>child</code>, if any, is placed inside this padding.</td>
     <td>null</td>
   </tr>
+  <tr>
+    <td>decoration</td>
+    <td>BoxDecoration</td>
+    <td>The decoration to paint behind the [child]. Use the [color] property to specify a simple solid color. The [child] is not clipped to the decoration. To clip a child to the shape of a particular [ShapeDecoration], consider using a [ClipPath] widget.</td>
+    <td>null</td>
+  </tr>
 </table>
 
 ## Example
