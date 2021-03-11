@@ -28,4 +28,24 @@ As the main doc, this package is inspired by bootstrap. We create grid width wit
     <td>int?</td>
     <td>The width of SpGrid Item when the screen lower or equal width <code>SpGridSize.lg</code> if it is null it will set as xs value</td>
   </tr>
+  <tr>
+    <td>child</td>
+    <td>required Widget</td>
+    <td>Child widget inside this element tree</td>
+  </tr>
+  <tr>
+    <td>decoration</td>
+    <td>BoxDecoration?</td>
+    <td>The decoration to paint behind the child.</td>
+  </tr>
+  <tr>
+    <td>padding</td>
+    <td>EdgeInsetsGeometry?</td>
+    <td>Empty space to inscribe inside the [decoration]. The [child], if any, is placed inside this padding.</td>
+  </tr>
+  <tr>
+    <td>alignment</td>
+    <td>AlignmentGeometry?</td>
+    <td>Align the [child] within the container.</td>
+  </tr>
 </table>
