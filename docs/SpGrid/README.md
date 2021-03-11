@@ -1,4 +1,6 @@
-#SpGrid
+# SpGrid
+
+Some properties of <code>SpGrid</code> class
 
 <table>
   <tr>
@@ -39,32 +41,44 @@
   </tr>
   <tr>
     <td>spacing</td>
-    <td>double:0</td>
+    <td>double = 0</td>
     <td>How much space to place between children in a run in the main axis.</td>
     <td>0</td>
   </tr>
   <tr>
     <td>runSpacing</td>
-    <td>double:0</td>
+    <td>double = 0</td>
     <td>How much space to place between the runs themselves in the cross axis.</td>
     <td>0</td>
   </tr>
   <tr>
     <td>alignment</td>
-    <td>WrapAlignment:WrapAlignment.start</td>
+    <td>WrapAlignment = WrapAlignment.start</td>
     <td>How the children within a run should be placed in the main axis.</td>
     <td>WrapAlignment.start</td>
   </tr>
   <tr>
     <td>runAlignment</td>
-    <td>WrapAlignment:WrapAlignment.start</td>
+    <td>WrapAlignment = WrapAlignment.start</td>
     <td>How the runs themselves should be placed in the cross axis.</td>
     <td>WrapAlignment.start</td>
   </tr>
   <tr>
     <td>crossAlignment</td>
-    <td>WrapCrossAlignment:WrapCrossAlignment.start</td>
+    <td>WrapCrossAlignment = WrapCrossAlignment.start</td>
     <td>How the children within a run should be aligned relative to each other in the cross axis.</td>
     <td>WrapCrossAlignment.start</td>
+  </tr>
+  <tr>
+    <td>direction</td>
+    <td>Axis direction = Axis.horizontal</td>
+    <td>The direction to use as the main axis.</td>
+    <td>Axis.horizontal</td>
+  </tr>
+  <tr>
+    <td>verticalDirection</td>
+    <td>VerticalDirection verticalDirection = VerticalDirection.down</td>
+    <td>Determines the order to lay children out vertically and how to interpret start and end in the vertical direction.</td>
+    <td>VerticalDirection.down</td>
   </tr>
 </table>
