@@ -1,8 +1,8 @@
 name: simple_grid
 description: A new Flutter package project.
 version: 0.0.1
-author:
-homepage:
+author: "Gilang Pratama"
+homepage: "https://github.com/nggepe/simple_grid"
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
