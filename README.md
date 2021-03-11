@@ -9,8 +9,8 @@ This is dynamic grid layout that you can use Like a bootstrap grid.
 There are 3 classes that you have to now, these are:
 
 1. <code>SpGrid</code> is the container of grid, <a href="https://github.com/nggepe/simple_grid/blob/master/docs/SpGrid/README.md">more information here</a>
-2. <code>SpGridItem</code> is the children of <code>SpGrid</code> <a href="https://github.com/nggepe/simple_grid/blob/master/docs/SpGridItem/README.md">more information here</a>
-3. <code>SpGridSize</code> is the class that you can declare the maximum of the **screen** size..
+2. <code>SpGridItem</code> is the children of <code>SpGrid</code>, <a href="https://github.com/nggepe/simple_grid/blob/master/docs/SpGridItem/README.md">more information here</a>
+3. <code>SpGridSize</code> is the class that you can declare the maximum of the **screen** size, <a href="https://github.com/nggepe/simple_grid/blob/master/docs/SpGridSize/README.md">more information here</a>
 
 ## Example
 
