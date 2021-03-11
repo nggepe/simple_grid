@@ -81,6 +81,6 @@ Some properties of <code>SpGrid</code> class
   <tr>
     <td>gridSize</td>
     <td>SpGridSize?</td>
-    <td><a href="">More information here</a></td>
+    <td><a href="https://github.com/nggepe/simple_grid/blob/master/docs/SpGridSize/README.md">More information here</a></td>
   </tr>
 </table>
