@@ -1,3 +1,5 @@
+#SpGrid
+
 <table>
   <tr>
     <th>Props</th>
@@ -58,5 +60,11 @@
     <td>WrapAlignment:WrapAlignment.start</td>
     <td>How the runs themselves should be placed in the cross axis.</td>
     <td>WrapAlignment.start</td>
+  </tr>
+  <tr>
+    <td>crossAlignment</td>
+    <td>WrapCrossAlignment:WrapCrossAlignment.start</td>
+    <td>How the children within a run should be aligned relative to each other in the cross axis.</td>
+    <td>WrapCrossAlignment.start</td>
   </tr>
 </table>
