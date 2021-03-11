@@ -53,4 +53,10 @@
     <td>How the children within a run should be placed in the main axis.</td>
     <td>WrapAlignment.start</td>
   </tr>
+  <tr>
+    <td>runAlignment</td>
+    <td>WrapAlignment:WrapAlignment.start</td>
+    <td>How the runs themselves should be placed in the cross axis.</td>
+    <td>WrapAlignment.start</td>
+  </tr>
 </table>
