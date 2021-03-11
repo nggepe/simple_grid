@@ -1,5 +1,5 @@
 name: simple_grid
-description: A new Flutter package project.
+description: "A dynamic grid inspired by boostrap, you can use it to describe your grid layout."
 version: 0.0.3
 homepage: "https://github.com/nggepe/simple_grid"
 
