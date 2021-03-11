@@ -24,6 +24,12 @@ There are 3 classes that you have to now, these are:
     <td>null</td>
   </tr>
   <tr>
+    <td>height</td>
+    <td>double</td>
+    <td>a nullable height that you can use to declare the height of grid container, if null it will following the content height</td>
+    <td>null</td>
+  </tr>
+  <tr>
     <td>margin</td>
     <td>EdgeInsetsGeometry</td>
     <td>Empty space to surround the <code>decoration</code> and <code>child</code></td>
