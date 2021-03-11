@@ -35,27 +35,27 @@ Some properties of <code>SpGrid</code> class
   </tr>
   <tr>
     <td>spacing</td>
-    <td>double = 0</td>
+    <td>double spacing = 0</td>
     <td>How much space to place between children in a run in the main axis.</td>
   </tr>
   <tr>
     <td>runSpacing</td>
-    <td>double = 0</td>
+    <td>double runSpacing = 0</td>
     <td>How much space to place between the runs themselves in the cross axis.</td>
   </tr>
   <tr>
     <td>alignment</td>
-    <td>WrapAlignment = WrapAlignment.start</td>
+    <td>WrapAlignment alignment = WrapAlignment.start</td>
     <td>How the children within a run should be placed in the main axis.</td>
   </tr>
   <tr>
     <td>runAlignment</td>
-    <td>WrapAlignment = WrapAlignment.start</td>
+    <td>WrapAlignment runAlignment = WrapAlignment.start</td>
     <td>How the runs themselves should be placed in the cross axis.</td>
   </tr>
   <tr>
     <td>crossAlignment</td>
-    <td>WrapCrossAlignment = WrapCrossAlignment.start</td>
+    <td>WrapCrossAlignment crossAlignment = WrapCrossAlignment.start</td>
     <td>How the children within a run should be aligned relative to each other in the cross axis.</td>
   </tr>
   <tr>
@@ -67,5 +67,20 @@ Some properties of <code>SpGrid</code> class
     <td>verticalDirection</td>
     <td>VerticalDirection verticalDirection = VerticalDirection.down</td>
     <td>Determines the order to lay children out vertically and how to interpret start and end in the vertical direction.</td>
+  </tr>
+  <tr>
+    <td>textDirection</td>
+    <td>TextDirection?</td>
+    <td>Determines the order to lay children out horizontally and how to interpret start and end in the horizontal direction.</td>
+  </tr>
+  <tr>
+    <td>children</td>
+    <td>required List<SpGridItem></td>
+    <td><a href="">More information here</a></td>
+  </tr>
+  <tr>
+    <td>gridSize</td>
+    <td>SpGridSize?</td>
+    <td><a href="">More information here</a></td>
   </tr>
 </table>
