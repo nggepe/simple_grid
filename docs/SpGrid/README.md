@@ -41,4 +41,16 @@
     <td>How much space to place between children in a run in the main axis.</td>
     <td>0</td>
   </tr>
+  <tr>
+    <td>runSpacing</td>
+    <td>double:0</td>
+    <td>How much space to place between the runs themselves in the cross axis.</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>alignment</td>
+    <td>WrapAlignment:WrapAlignment.start</td>
+    <td>How the children within a run should be placed in the main axis.</td>
+    <td>WrapAlignment.start</td>
+  </tr>
 </table>
