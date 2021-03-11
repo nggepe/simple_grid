@@ -1,5 +1,6 @@
 # simple_grid
 
+**Inspired by bootstrap**
 This is dynamic grid layout that you can use Like a bootstrap grid.
 <img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/docs/simple-grid-demo.gif" width="100%"/>
 
