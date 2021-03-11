@@ -49,3 +49,6 @@ As the main doc, this package is inspired by bootstrap. We create grid width wit
     <td>Align the [child] within the container.</td>
   </tr>
 </table>
+
+Easy way to understand how grid is
+<img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/docs/grid-example.png" width="100%"/>
