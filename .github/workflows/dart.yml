@@ -18,22 +18,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Publish web
-      uses: sakebook/actions-flutter-pub-publisher@v1.3.0
-      with:
-        credential: ${{ secrets.CREDENTIAL_JSON }}
-        flutter_package: true
-        package_directory: "assets_audio_player_web"
-        skip_test: true
-        dry_run: false
-    - name: Publish
-      uses: sakebook/actions-flutter-pub-publisher@v1.3.0
-      with:
-        credential: ${{ secrets.CREDENTIAL_JSON }}
-        flutter_package: true
-        package_directory: "."
-        skip_test: true
-        dry_run: false
+      - name: Install Dependencies
+        run: pub get
+      - name: Format
+        run: dartfmt --dry-run --set-exit-if-changed .
+      - name: Analyze
+        run: dart analyze --fatal-infos --fatal-warnings .
