@@ -4,7 +4,7 @@
 [![build](https://github.com/nggepe/simple_grid/actions/workflows/dart.yml/badge.svg)](https://github.com/nggepe/simple_grid/actions/workflows/dart.yml)
 
 **Inspired by bootstrap** ,
-This is dynamic grid layout that you can use Like a bootstrap grid, but the size following <a href="https://material-ui.com/customization/breakpoints/">material UI</a> break points. But, don't to worry you can customize your break point like <a href="#customize-break-point">here</a>.
+This is dynamic grid layout that you can use Like a bootstrap grid, but the size following <a href="https://material-ui.com/customization/breakpoints/">material UI</a> break points. You can also customize your break point like <a href="#customize-break-point">here</a>.
 This package purely using mediaquery, don't worry about the render.
 
 <img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/demo-grid.gif" width="100%"/>
