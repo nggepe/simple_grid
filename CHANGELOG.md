@@ -5,3 +5,5 @@
 ## [0.0.3] - Re-documentation
 
 ## [0.0.4] - Comment documentation, update extra large break-point, customizeable break-points
+
+## [0.0.5] - Update documentation
