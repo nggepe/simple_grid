@@ -78,59 +78,66 @@ class SpGrid extends StatelessWidget {
           lg: 1280,
           xl: 1920,
         );
-    return Container(
-      width: width,
-      padding: padding,
-      margin: margin,
-      height: height,
-      decoration: decoration,
-      child: LayoutBuilder(builder: (ctx, cs) {
-        double width = MediaQuery.of(context).size.width;
-        print(width);
-        return Wrap(
-          spacing: spacing,
-          alignment: alignment,
-          runSpacing: runSpacing,
-          verticalDirection: verticalDirection,
-          crossAxisAlignment: crossAlignment,
-          runAlignment: runAlignment,
-          direction: direction,
-          textDirection: textDirection,
-          children: List.generate(
-            children.length,
-            (i) => Container(
-              padding: children[i].padding,
-              alignment: children[i].aligment,
-              width: width >= spGridSize.xs && width < spGridSize.sm
-                  ? cs.maxWidth * (children[i].xs / 12)
-                  : width >= spGridSize.sm && width < spGridSize.md
-                      ? cs.maxWidth * ((children[i].sm ?? children[i].xs) / 12)
-                      : width >= spGridSize.md && width < spGridSize.lg
-                          ? cs.maxWidth *
-                              ((children[i].md ??
-                                      children[i].sm ??
-                                      children[i].xs) /
-                                  12)
-                          : width >= spGridSize.lg && width <= spGridSize.xl
-                              ? cs.maxWidth *
-                                  ((children[i].lg ??
-                                          children[i].md ??
-                                          children[i].sm ??
-                                          children[i].xs) /
-                                      12)
-                              : cs.maxWidth *
-                                  ((children[i].xl ??
-                                          children[i].lg ??
-                                          children[i].md ??
-                                          children[i].sm ??
-                                          children[i].xs) /
-                                      12),
-              child: children[i].child,
-              decoration: children[i].decoration,
+    return Padding(
+      padding:
+          EdgeInsets.only(left: alignment == WrapAlignment.start ? spacing : 0),
+      child: Container(
+        width: width,
+        padding: padding,
+        margin: margin,
+        height: height,
+        decoration: decoration,
+        child: LayoutBuilder(builder: (ctx, cs) {
+          double width = MediaQuery.of(context).size.width;
+          print(width);
+          return Wrap(
+            spacing: spacing,
+            alignment: alignment,
+            runSpacing: runSpacing,
+            verticalDirection: verticalDirection,
+            crossAxisAlignment: crossAlignment,
+            runAlignment: runAlignment,
+            direction: direction,
+            textDirection: textDirection,
+            children: List.generate(
+              children.length,
+              (i) => Container(
+                padding: children[i].padding,
+                alignment: children[i].aligment,
+                width: (width >= spGridSize.xs && width < spGridSize.sm
+                        ? cs.maxWidth * (children[i].xs / 12)
+                        : width >= spGridSize.sm && width < spGridSize.md
+                            ? cs.maxWidth *
+                                ((children[i].sm ?? children[i].xs) / 12)
+                            : width >= spGridSize.md && width < spGridSize.lg
+                                ? cs.maxWidth *
+                                    ((children[i].md ??
+                                            children[i].sm ??
+                                            children[i].xs) /
+                                        12)
+                                : width >= spGridSize.lg &&
+                                        width <= spGridSize.xl
+                                    ? cs.maxWidth *
+                                        ((children[i].lg ??
+                                                children[i].md ??
+                                                children[i].sm ??
+                                                children[i].xs) /
+                                            12)
+                                    : cs.maxWidth *
+                                        ((children[i].xl ??
+                                                children[i].lg ??
+                                                children[i].md ??
+                                                children[i].sm ??
+                                                children[i].xs) /
+                                            12)) -
+                    spacing,
+                child: children[i].child,
+                decoration: children[i].decoration,
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        }),
+      ),
     );
   }
 }
