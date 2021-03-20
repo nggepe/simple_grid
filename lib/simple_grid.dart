@@ -89,7 +89,6 @@ class SpGrid extends StatelessWidget {
         decoration: decoration,
         child: LayoutBuilder(builder: (ctx, cs) {
           double width = MediaQuery.of(context).size.width;
-          print(width);
           return Wrap(
             spacing: spacing,
             alignment: alignment,

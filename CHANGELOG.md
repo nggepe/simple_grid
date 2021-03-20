@@ -9,3 +9,5 @@
 ## [0.0.5] - Update documentation
 
 ## [0.0.6] - Space fixing
+
+## [0.0.7] - Remove debug print
