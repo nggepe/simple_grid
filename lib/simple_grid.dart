@@ -1,6 +1,8 @@
 library simple_grid;
 
 import 'package:flutter/material.dart';
+import 'package:simple_grid/src/sp_order.dart';
+export 'package:simple_grid/src/sp_order.dart';
 
 class SpGrid extends StatelessWidget {
   ///a nullable width that you can use to declare the width of grid container, if null it will following the parent width
@@ -46,7 +48,7 @@ class SpGrid extends StatelessWidget {
   final TextDirection? textDirection;
 
   ///screen breakpoint that you can customize
-  final SpGridSize? gridSize;
+  final SpGridSize gridSize;
 
   ///the grid container which is has children [SpGridItem]
   const SpGrid({
@@ -65,19 +67,11 @@ class SpGrid extends StatelessWidget {
     this.runAlignment: WrapAlignment.start,
     this.direction: Axis.horizontal,
     this.textDirection,
-    this.gridSize,
+    this.gridSize: const SpGridSize(),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SpGridSize spGridSize = gridSize ??
-        SpGridSize(
-          xs: 0,
-          sm: 600,
-          md: 960,
-          lg: 1280,
-          xl: 1920,
-        );
     return Padding(
       padding:
           EdgeInsets.only(left: alignment == WrapAlignment.start ? spacing : 0),
@@ -98,46 +92,97 @@ class SpGrid extends StatelessWidget {
             runAlignment: runAlignment,
             direction: direction,
             textDirection: textDirection,
-            children: List.generate(
-              children.length,
-              (i) => Container(
-                padding: children[i].padding,
-                alignment: children[i].aligment,
-                width: (width >= spGridSize.xs && width < spGridSize.sm
-                        ? cs.maxWidth * (children[i].xs / 12)
-                        : width >= spGridSize.sm && width < spGridSize.md
-                            ? cs.maxWidth *
-                                ((children[i].sm ?? children[i].xs) / 12)
-                            : width >= spGridSize.md && width < spGridSize.lg
-                                ? cs.maxWidth *
-                                    ((children[i].md ??
-                                            children[i].sm ??
-                                            children[i].xs) /
-                                        12)
-                                : width >= spGridSize.lg &&
-                                        width <= spGridSize.xl
-                                    ? cs.maxWidth *
-                                        ((children[i].lg ??
-                                                children[i].md ??
-                                                children[i].sm ??
-                                                children[i].xs) /
-                                            12)
-                                    : cs.maxWidth *
-                                        ((children[i].xl ??
-                                                children[i].lg ??
-                                                children[i].md ??
-                                                children[i].sm ??
-                                                children[i].xs) /
-                                            12)) -
-                    spacing,
-                child: children[i].child,
-                decoration: children[i].decoration,
-              ),
-            ),
+            children: _childrenSort(
+                    children,
+                    width >= gridSize.xs && width < gridSize.sm
+                        ? "xs"
+                        : width >= gridSize.sm && width < gridSize.md
+                            ? "sm"
+                            : width >= gridSize.md && width < gridSize.lg
+                                ? "md"
+                                : width >= gridSize.lg && width <= gridSize.xl
+                                    ? "lg"
+                                    : "xl")
+                .map((e) => Container(
+                      padding: e.padding,
+                      alignment: e.aligment,
+                      width: (width >= gridSize.xs && width < gridSize.sm
+                              ? cs.maxWidth * (e.xs / 12)
+                              : width >= gridSize.sm && width < gridSize.md
+                                  ? cs.maxWidth * ((e.sm ?? e.xs) / 12)
+                                  : width >= gridSize.md && width < gridSize.lg
+                                      ? cs.maxWidth *
+                                          ((e.md ?? e.sm ?? e.xs) / 12)
+                                      : width >= gridSize.lg &&
+                                              width <= gridSize.xl
+                                          ? cs.maxWidth *
+                                              ((e.lg ?? e.md ?? e.sm ?? e.xs) /
+                                                  12)
+                                          : cs.maxWidth *
+                                              ((e.xl ??
+                                                      e.lg ??
+                                                      e.md ??
+                                                      e.sm ??
+                                                      e.xs) /
+                                                  12)) -
+                          spacing,
+                      child: e.child,
+                      decoration: e.decoration,
+                    ))
+                .toList(),
           );
         }),
       ),
     );
+  }
+
+  List<SpGridItem> _childrenSort(List<SpGridItem> children, String type) {
+    List<SpGridItem> newChildren = children;
+    newChildren.sort((a, b) {
+      switch (type) {
+        case 'xs':
+          return a.order.xs?.compareTo(b.order.xs ??
+                  b.order.sm ??
+                  b.order.md ??
+                  b.order.lg ??
+                  b.order.xl ??
+                  newChildren.length) ??
+              b.order.sm ??
+              b.order.md ??
+              b.order.lg ??
+              b.order.xl ??
+              newChildren.length;
+        case 'sm':
+          return a.order.sm?.compareTo(b.order.sm ??
+                  b.order.md ??
+                  b.order.lg ??
+                  b.order.xl ??
+                  newChildren.length) ??
+              b.order.md ??
+              b.order.lg ??
+              b.order.xl ??
+              newChildren.length;
+        case 'md':
+          return a.order.md?.compareTo(b.order.md ??
+                  b.order.lg ??
+                  b.order.xl ??
+                  newChildren.length) ??
+              b.order.lg ??
+              b.order.xl ??
+              newChildren.length;
+        case 'lg':
+          return a.order.lg
+                  ?.compareTo(b.order.lg ?? b.order.xl ?? newChildren.length) ??
+              b.order.xl ??
+              newChildren.length;
+        case 'xl':
+          return a.order.xl?.compareTo(b.order.xl ?? newChildren.length) ??
+              newChildren.length;
+        default:
+          return newChildren.length;
+      }
+    });
+    return newChildren;
   }
 }
 
@@ -172,19 +217,21 @@ class SpGridItem {
   ///The decoration to paint behind the child.
   final BoxDecoration? decoration;
 
+  final SpOrder order;
+
   /// The item of the `SpGrid`
-  const SpGridItem({
-    Key? key,
-    this.xs: 12,
-    this.sm,
-    this.md,
-    this.lg,
-    this.padding,
-    this.aligment,
-    this.xl,
-    required this.child,
-    this.decoration,
-  });
+  const SpGridItem(
+      {Key? key,
+      this.xs: 12,
+      this.sm,
+      this.md,
+      this.lg,
+      this.padding,
+      this.aligment,
+      this.xl,
+      required this.child,
+      this.decoration,
+      this.order: const SpOrder()});
 }
 
 class SpGridSize {
@@ -204,7 +251,7 @@ class SpGridSize {
   final double xl;
 
   ///this is screen break point that you can declare your own
-  SpGridSize({
+  const SpGridSize({
     this.xs: 0,
     this.sm: 600,
     this.md: 960,
