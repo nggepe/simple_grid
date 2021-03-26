@@ -146,40 +146,28 @@ class SpGrid extends StatelessWidget {
                   b.order.md ??
                   b.order.lg ??
                   b.order.xl ??
-                  newChildren.length) ??
-              b.order.sm ??
-              b.order.md ??
-              b.order.lg ??
-              b.order.xl ??
-              newChildren.length;
+                  children.length) ??
+              children.length;
         case 'sm':
           return a.order.sm?.compareTo(b.order.sm ??
                   b.order.md ??
                   b.order.lg ??
                   b.order.xl ??
-                  newChildren.length) ??
-              b.order.md ??
-              b.order.lg ??
-              b.order.xl ??
-              newChildren.length;
+                  children.length) ??
+              children.length;
         case 'md':
-          return a.order.md?.compareTo(b.order.md ??
-                  b.order.lg ??
-                  b.order.xl ??
-                  newChildren.length) ??
-              b.order.lg ??
-              b.order.xl ??
-              newChildren.length;
+          return a.order.md?.compareTo(
+                  b.order.md ?? b.order.lg ?? b.order.xl ?? children.length) ??
+              children.length;
         case 'lg':
           return a.order.lg
-                  ?.compareTo(b.order.lg ?? b.order.xl ?? newChildren.length) ??
-              b.order.xl ??
-              newChildren.length;
+                  ?.compareTo(b.order.lg ?? b.order.xl ?? children.length) ??
+              children.length;
         case 'xl':
-          return a.order.xl?.compareTo(b.order.xl ?? newChildren.length) ??
-              newChildren.length;
+          return a.order.xl?.compareTo(b.order.xl ?? children.length) ??
+              children.length;
         default:
-          return newChildren.length;
+          return children.length;
       }
     });
     return newChildren;
