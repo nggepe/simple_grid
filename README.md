@@ -1,4 +1,4 @@
-# simple_grid
+# Introduction
 
 [![pub package](https://img.shields.io/pub/v/simple_grid.svg)](https://pub.dev/packages/simple_grid)
 [![build](https://github.com/nggepe/simple_grid/actions/workflows/dart.yml/badge.svg)](https://github.com/nggepe/simple_grid/actions/workflows/dart.yml)
