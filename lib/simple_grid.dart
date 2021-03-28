@@ -142,15 +142,15 @@ class SpGrid extends StatelessWidget {
     newChildren.sort((a, b) {
       switch (type) {
         case 'xs':
-          return a.order.xs.compareTo(b.order.xs);
+          return a.order.xs?.compareTo(b.order.xs ?? children.length) ?? 0;
         case 'sm':
-          return a.order.sm.compareTo(b.order.sm);
+          return a.order.sm?.compareTo(b.order.sm ?? children.length) ?? 0;
         case 'md':
-          return a.order.md.compareTo(b.order.md);
+          return a.order.md?.compareTo(b.order.md ?? children.length) ?? 0;
         case 'lg':
-          return a.order.lg.compareTo(b.order.lg);
+          return a.order.lg?.compareTo(b.order.lg ?? children.length) ?? 0;
         case 'xl':
-          return a.order.xl.compareTo(b.order.xl);
+          return a.order.xl?.compareTo(b.order.xl ?? children.length) ?? 0;
         default:
           return children.length;
       }
