@@ -11,10 +11,14 @@ This package purely using mediaquery, don't worry about the render.
 
 <img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/demo-grid.gif" width="100%"/>
 
+#### Order Demo
+
+<img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/order-example.gif" width="100%"/>
+
 #### Grid Explanation
 
 Bootstrap, material-ui or another web-grid always use 12 size. Here is the image example:
-<img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/grid-example.png" width="100%"/>
+<img src="https://raw.githubusercontent.com/nggepe/simple_grid/master/doc/grid-example.png" style="max-width: 400px;" />
 
 ## Explanation
 
