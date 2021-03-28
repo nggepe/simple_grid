@@ -6,9 +6,9 @@ name: Build
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]  
+    branches: [master]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -28,3 +28,5 @@ jobs:
         run: dartfmt --dry-run --set-exit-if-changed .
       - name: Analyze
         run: dart analyze --fatal-infos --fatal-warnings .
+      - name: Flutter Analyze
+        run: flutter analyze
