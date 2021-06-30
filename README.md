@@ -1,4 +1,5 @@
-<a href="https://gepcode.com/post/dokumentasi-simple-grid" target="_blank">Indonesian Documentation</a>
+Indonesian documentation is <a href="https://gepcode.com/post/dokumentasi-simple-grid" target="_blank">here</a>
+
 # Introduction
 
 [![pub package](https://img.shields.io/pub/v/simple_grid.svg)](https://pub.dev/packages/simple_grid)

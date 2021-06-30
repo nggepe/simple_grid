@@ -1,3 +1,5 @@
+## [0.1.1] - Update docs & dependencies
+
 ## [0.1.0] - New Order
 
 ## [0.0.7] - Remove debug print
