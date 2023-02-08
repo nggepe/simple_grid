@@ -59,15 +59,15 @@ class SpGrid extends StatelessWidget {
     this.width,
     this.height,
     this.decoration,
-    this.spacing: 0,
-    this.runSpacing: 0,
-    this.alignment: WrapAlignment.start,
-    this.verticalDirection: VerticalDirection.down,
-    this.crossAlignment: WrapCrossAlignment.start,
-    this.runAlignment: WrapAlignment.start,
-    this.direction: Axis.horizontal,
+    this.spacing = 0,
+    this.runSpacing = 0,
+    this.alignment = WrapAlignment.start,
+    this.verticalDirection = VerticalDirection.down,
+    this.crossAlignment = WrapCrossAlignment.start,
+    this.runAlignment = WrapAlignment.start,
+    this.direction = Axis.horizontal,
     this.textDirection,
-    this.gridSize: const SpGridSize(),
+    this.gridSize = const SpGridSize(),
   }) : super(key: key);
 
   @override

@@ -1,3 +1,5 @@
+## [0.1.2] - Refactor deprecated code
+
 ## [0.1.1] - Update docs & dependencies
 
 ## [0.1.0] - New Order
