@@ -18,12 +18,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
       - name: Install Dependencies
         run: flutter pub get
+      - name: Install Dependencies on handle_request_example
+        run: flutter pub get
+        working-directory: doc/handle_request_example
+      - name: Format
+        run: flutter pub publish --dry-run
       - name: Analyze
         run: dart analyze --fatal-infos --fatal-warnings .
       - name: Flutter Analyze
