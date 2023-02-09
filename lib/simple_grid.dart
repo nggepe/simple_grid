@@ -195,7 +195,7 @@ class SpGridItem {
   /// The item of the `SpGrid`
   const SpGridItem(
       {Key? key,
-      this.xs: 12,
+      this.xs = 12,
       this.sm,
       this.md,
       this.lg,
@@ -204,7 +204,7 @@ class SpGridItem {
       this.xl,
       required this.child,
       this.decoration,
-      this.order: const SpOrder()});
+      this.order = const SpOrder()});
 }
 
 class SpGridSize {
@@ -225,10 +225,10 @@ class SpGridSize {
 
   ///this is screen break point that you can declare your own
   const SpGridSize({
-    this.xs: 0,
-    this.sm: 600,
-    this.md: 960,
-    this.lg: 1280,
-    this.xl: 1920,
+    this.xs = 0,
+    this.sm = 600,
+    this.md = 960,
+    this.lg = 1280,
+    this.xl = 1920,
   });
 }
