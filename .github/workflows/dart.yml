@@ -24,9 +24,6 @@ jobs:
           channel: "stable"
       - name: Install Dependencies
         run: flutter pub get
-      - name: Install Dependencies on handle_request_example
-        run: flutter pub get
-        working-directory: doc/handle_request_example
       - name: Format
         run: flutter pub publish --dry-run
       - name: Analyze
