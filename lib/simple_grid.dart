@@ -59,15 +59,15 @@ class SpGrid extends StatelessWidget {
     this.width,
     this.height,
     this.decoration,
-    this.spacing: 0,
-    this.runSpacing: 0,
-    this.alignment: WrapAlignment.start,
-    this.verticalDirection: VerticalDirection.down,
-    this.crossAlignment: WrapCrossAlignment.start,
-    this.runAlignment: WrapAlignment.start,
-    this.direction: Axis.horizontal,
+    this.spacing = 0,
+    this.runSpacing = 0,
+    this.alignment = WrapAlignment.start,
+    this.verticalDirection = VerticalDirection.down,
+    this.crossAlignment = WrapCrossAlignment.start,
+    this.runAlignment = WrapAlignment.start,
+    this.direction = Axis.horizontal,
     this.textDirection,
-    this.gridSize: const SpGridSize(),
+    this.gridSize = const SpGridSize(),
   }) : super(key: key);
 
   @override
@@ -195,7 +195,7 @@ class SpGridItem {
   /// The item of the `SpGrid`
   const SpGridItem(
       {Key? key,
-      this.xs: 12,
+      this.xs = 12,
       this.sm,
       this.md,
       this.lg,
@@ -204,7 +204,7 @@ class SpGridItem {
       this.xl,
       required this.child,
       this.decoration,
-      this.order: const SpOrder()});
+      this.order = const SpOrder()});
 }
 
 class SpGridSize {
@@ -225,10 +225,10 @@ class SpGridSize {
 
   ///this is screen break point that you can declare your own
   const SpGridSize({
-    this.xs: 0,
-    this.sm: 600,
-    this.md: 960,
-    this.lg: 1280,
-    this.xl: 1920,
+    this.xs = 0,
+    this.sm = 600,
+    this.md = 960,
+    this.lg = 1280,
+    this.xl = 1920,
   });
 }

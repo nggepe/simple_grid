@@ -1,6 +1,6 @@
 name: simple_grid
 description: "A dynamic grid inspired by boostrap, you can use it to describe your grid layout. This package purely using mediaquery, don't worry about the render."
-version: 0.1.1
+version: 0.1.2
 issue_tracker: https://github.com/nggepe/simple_grid
 homepage: "https://github.com/nggepe/simple_grid"
 
