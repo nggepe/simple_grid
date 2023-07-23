@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:simple_grid/simple_grid.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,17 +15,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Simple_grid"),
+        title: const Text("Simple_grid"),
       ),
       body: SpGrid(width: MediaQuery.of(context).size.width, children: [
         SpGridItem(
