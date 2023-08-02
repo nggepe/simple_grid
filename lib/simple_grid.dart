@@ -138,7 +138,7 @@ class SpGrid extends StatelessWidget {
 
   ///sorting children by type
   List<SpGridItem> _childrenSort(List<SpGridItem> children, String type) {
-    List<SpGridItem> newChildren = children;
+    List<SpGridItem> newChildren = List.from(children);
     newChildren.sort((a, b) {
       switch (type) {
         case 'xs':

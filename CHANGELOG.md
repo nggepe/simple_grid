@@ -1,3 +1,7 @@
+## [0.1.4]
+
+- Support constant children
+
 ## [0.1.3]
 
 - Upgrade sdk version
