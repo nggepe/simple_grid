@@ -1,6 +1,6 @@
 name: simple_grid
 description: "A dynamic grid inspired by boostrap, you can use it to describe your grid layout. This package purely using mediaquery, don't worry about the render."
-version: 0.1.4
+version: 0.1.5
 issue_tracker: https://github.com/nggepe/simple_grid
 homepage: "https://github.com/nggepe/simple_grid"
 
@@ -20,7 +20,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
-flutter:
+# flutter:
 
   # To add assets to your package, add an assets section, like this:
   # assets:

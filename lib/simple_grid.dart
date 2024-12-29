@@ -92,17 +92,7 @@ class SpGrid extends StatelessWidget {
             runAlignment: runAlignment,
             direction: direction,
             textDirection: textDirection,
-            children: _childrenSort(
-                    children,
-                    width >= gridSize.xs && width < gridSize.sm
-                        ? "xs"
-                        : width >= gridSize.sm && width < gridSize.md
-                            ? "sm"
-                            : width >= gridSize.md && width < gridSize.lg
-                                ? "md"
-                                : width >= gridSize.lg && width <= gridSize.xl
-                                    ? "lg"
-                                    : "xl")
+            children: _childrenSort(children, _convertScreen(width))
                 .map((e) => Container(
                       padding: e.padding,
                       alignment: e.aligment,
@@ -136,26 +126,47 @@ class SpGrid extends StatelessWidget {
     );
   }
 
+  String _convertScreen(double width) {
+    return width >= gridSize.xs && width < gridSize.sm
+        ? "xs"
+        : width >= gridSize.sm && width < gridSize.md
+            ? "sm"
+            : width >= gridSize.md && width < gridSize.lg
+                ? "md"
+                : width >= gridSize.lg && width <= gridSize.xl
+                    ? "lg"
+                    : "xl";
+  }
+
   ///sorting children by type
   List<SpGridItem> _childrenSort(List<SpGridItem> children, String type) {
-    List<SpGridItem> newChildren = List.from(children);
-    newChildren.sort((a, b) {
-      switch (type) {
-        case 'xs':
-          return a.order.xs?.compareTo(b.order.xs ?? children.length) ?? 0;
-        case 'sm':
-          return a.order.sm?.compareTo(b.order.sm ?? children.length) ?? 0;
-        case 'md':
-          return a.order.md?.compareTo(b.order.md ?? children.length) ?? 0;
-        case 'lg':
-          return a.order.lg?.compareTo(b.order.lg ?? children.length) ?? 0;
-        case 'xl':
-          return a.order.xl?.compareTo(b.order.xl ?? children.length) ?? 0;
-        default:
-          return children.length;
+    List<Map<String, dynamic>> indexedChildren = [
+      for (int index = 0; index < children.length; index++)
+        {'item': children[index], 'index': index}
+    ];
+
+    indexedChildren.sort((a, b) {
+      int getOrder(dynamic item) {
+        switch (type) {
+          case 'xs':
+            return item['item'].order.xs ?? item['index'];
+          case 'sm':
+            return item['item'].order.sm ?? item['index'];
+          case 'md':
+            return item['item'].order.md ?? item['index'];
+          case 'lg':
+            return item['item'].order.lg ?? item['index'];
+          case 'xl':
+            return item['item'].order.xl ?? item['index'];
+          default:
+            return item['index'];
+        }
       }
+
+      return getOrder(a).compareTo(getOrder(b));
     });
-    return newChildren;
+
+    return indexedChildren.map((e) => e['item'] as SpGridItem).toList();
   }
 }
 

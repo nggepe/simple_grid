@@ -1,3 +1,7 @@
+## [0.1.5]
+
+- Fix bug order
+
 ## [0.1.4]
 
 - Support constant children
